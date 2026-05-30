@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cambiar Color</title>
+</head>
+<style>
+    body {
+        font-family: "Poppins", sans-serif;
+        background-color: #f6faff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        color: #333;
+    }
+
+    .contenedor {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: bisque;
+        text-align: center;
+        justify-content: center;
+        padding: 50px;
+        margin: 100px;
+        max-height: 100vh;
+        max-width: 100vh;
+        border-radius: 20px;
+    }
+
+    .selectores {
+        display: flex;
+        font-size: 1rem;
+    }
+
+    input[type="range"] {
+        -webkit-appearance: none;
+        width: 150px;
+        height: 8px;
+        border-radius: 10px;
+        outline: none;
+    }
+
+    /* RED */
+
+    #redRango {
+        background: rgba(255, 0, 0, 0.3);
+    }
+
+    #redRango::-webkit-slider-thumb {
+        -webkit-appearance: none;
+
+        width: 18px;
+        height: 18px;
+
+        border-radius: 50%;
+        background: red;
+        cursor: pointer;
+    }
+
+    /* GREEN */
+
+    #greenRango {
+        background: rgba(0, 255, 0, 0.3);
+    }
+
+    #greenRango::-webkit-slider-thumb {
+        -webkit-appearance: none;
+
+        width: 18px;
+        height: 18px;
+
+        border-radius: 50%;
+        background: green;
+        cursor: pointer;
+    }
+
+    /* BLUE */
+
+    #blueRango {
+        background: rgba(0, 0, 255, 0.3);
+    }
+
+    #blueRango::-webkit-slider-thumb {
+        -webkit-appearance: none;
+
+        width: 18px;
+        height: 18px;
+
+        border-radius: 50%;
+        background: blue;
+        cursor: pointer;
+    }
+
+    .color {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        height: 150px;
+        width: 150px;
+        background-color: rgb(0, 0, 0);
+        border-radius: 50%;
+    }
+</style>
+
+<body>
+    <div class="contenedor">
+        <div id="color" class="color"></div>
+        <div id="valores">rgb(0, 0, 0)</div>
+        <div class="selectores">
+            <label for="redRango">RED</label>
+            <input type="range" id="redRango" min="0" max="255" value="0" />
+
+            <label for="greenRango">GREEN</label>
+            <input type="range" id="greenRango" min="0" max="255" value="0" />
+
+            <label for="blueRango">BLUE</label>
+            <input type="range" id="blueRango" min="0" max="255" value="0" />
+        </div>
+
+        <div id="alerta"></div>
+    </div>
+
+
+    <script>
+        const color = document.getElementById("color");
+        const redRango = document.getElementById("redRango");
+        const greenRango = document.getElementById("greenRango");
+        const blueRango = document.getElementById("blueRango");
+        const valores = document.getElementById("valores");
+
+        redRango.addEventListener("input", aumentarColor);
+        greenRango.addEventListener("input", aumentarColor);
+        blueRango.addEventListener("input", aumentarColor);
+
+    
+    
+        function aumentarColor(){
+            const valorRojo = redRango.value;
+            const valorVerde = greenRango.value;
+            const valorAzul = blueRango.value;
+            color.style.backgroundColor = `rgb(${valorRojo}, ${valorVerde}, ${valorAzul})`
+            valores.textContent = `rgb(${valorRojo}, ${valorVerde}, ${valorAzul})`
+        }
+        
+
+    </script>
+</body>
+
+</html>

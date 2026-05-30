@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CONTADOR SIMPLE</title>
+  </head>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #f6faff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    .contenedor {
+      background-color: bisque;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      margin: 20px auto;
+      max-height: 100vh;
+      border-radius: 50px;
+    }
+
+    .numero {
+      padding: 0.8rem;
+      margin-top: 0.5rem;
+      font-family: fantasy;
+      font-size: 2rem;
+    }
+
+    button {
+      padding: 0.8rem;
+      margin-top: 0.5rem;
+      border: none;
+      border-radius: 50px;
+      font-size: 1rem;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .reset {
+      background-color: rgb(61, 53, 54);
+      color: #ffffff;
+    }
+
+    .mas {
+      background-color: rgb(71, 223, 92);
+      color: #333;
+    }
+
+    .menos {
+      background-color: rgb(251, 101, 88);
+      color: #333;
+    }
+  </style>
+
+  <body>
+    <div class="contenedor">
+      <div id="contador" class="numero">0</div>
+      <button class="mas" id="masbtn">+</button>
+      <button class="menos" id="menosbtn">-</button>
+      <button class="reset" id="restbtn">RESET</button>
+      <div id="alerta"></div>
+    </div>
+
+    <script>
+      const contador = document.getElementById("contador");
+      const masBtn = document.getElementById("masbtn");
+      const menosBtn = document.getElementById("menosbtn");
+      const resetBtn = document.getElementById("restbtn");
+
+      masBtn.addEventListener("click", mas);
+      menosBtn.addEventListener("click", menos);
+      resetBtn.addEventListener("click", reset);
+
+      function mas() {
+        let numContador = Number(contador.textContent);
+        contador.textContent = ++numContador;
+        document.getElementById("alerta").textContent = " ";
+      }
+
+      function menos() {
+        let numContador = Number(contador.textContent);
+        if (numContador > 0) {
+          contador.textContent = --numContador;
+          document.getElementById("alerta").textContent = " ";
+        } else {
+          document.getElementById("alerta").style.color = "red";
+          document.getElementById("alerta").textContent = "No se puede disminuir!";
+        }
+      }
+
+      function reset() {
+        contador.textContent = 0;
+        document.getElementById("alerta").style.color = "red";
+        document.getElementById("alerta").textContent = "RESETEADO";
+      }
+    </script>
+  </body>
+</html>

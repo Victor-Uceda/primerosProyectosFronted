@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contar caracteres</title>
+  </head>
+  <body>
+    <div>
+      <label for="palabra">Ingrese una palabra</label>
+      <input type="text" id="palabra" />
+   
+    </div>
+    <div id="contadorTexto"></div>
+
+    <script>
+      const palabraIngresada = document.getElementById("palabra");
+    
+      const contadorTexto = document.getElementById("contadorTexto");
+
+
+      palabraIngresada.addEventListener("input", contar);
+
+      function contar() {
+        const palabra = palabraIngresada.value.trim();
+        let numCaracteres = palabra.length;
+        contadorTexto.textContent = `Número de caracteres: ${numCaracteres}`;
+      }
+    </script>
+  </body>
+</html>

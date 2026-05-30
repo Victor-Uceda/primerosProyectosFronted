@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de compras</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="conteiner">
+      <h1>Lista:</h1>
+
+      <div class="agregarCompra">
+        <label for="articulo">Nombre: </label>
+        <input type="text" id="nombreArticulo"/><br>
+
+        <label for="cantidad">Cantidad: </label>
+        <input type="number" id="cantidad" /><br>
+
+        <label for="precio">Precio: </label>
+        <input type="number" step="any" id="precio"/><br>
+
+        <button id="btnAgregar">Agregar</button>
+      </div>
+
+
+
+      <div class="lista">
+        <ul id="lista">
+        </ul>
+      </div>
+      <div id="cantidadTotal"> </div>
+
+
+    </div>
+
+    <script src="Articulo.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

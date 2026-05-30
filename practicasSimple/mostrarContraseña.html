@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mostrar / ocultar contraseña</title>
+  </head>
+  <body>
+    <div class="contenedor">
+      <label for="contraseña">Contraseña: </label>
+      <input type="password" name="contraseña" id="contra" />
+
+      <input type="checkbox" id="mostrarContrabtn" value="valorCheck" />
+      <label for="mostrarContrabtn">Mostrar/ocultar contraseña</label>
+    </div>
+
+    <script>
+      const contra = document.getElementById("contra");
+      const mostrarBtn = document.getElementById("mostrarContrabtn");
+
+      mostrarBtn.addEventListener("change", mostrarOcultarContra);
+
+      function mostrarOcultarContra() {
+        contra.type = mostrarBtn.checked ? "text" : "password";
+      }
+    </script>
+  </body>
+</html>
