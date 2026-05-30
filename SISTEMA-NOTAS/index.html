@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <title>SISTEMA DE NOTAS</title>
+  </head>
+
+  <body class="bg-light">
+    <div class="container mt-5">
+      <div class="card shadow p-4">
+        <h1 class="text-center mb-4">SISTEMA DE NOTAS</h1>
+
+        <h4 class="mb-3">Agregar alumno</h4>
+
+        <!-- FILA -->
+        <div class="row g-3 align-items-center">
+          <!-- NOMBRE -->
+          <div class="col-md-5">
+            <input type="text" class="form-control" id="nombreEstudiante"  placeholder="Nombre del alumno" />
+          </div>
+
+          <!-- NOTA -->
+          <div class="col-md-4">
+            <input type="number" step="any" class="form-control" id="notaEstudiante" placeholder="Nota"/>
+          </div>
+
+          <!-- BOTON -->
+          <div class="col-md-3 d-grid">
+            <button type="button" class="btn btn-success " id="botonAgregar">
+              Agregar
+            </button>
+          </div>
+        </div>
+
+        <!-- LISTA -->
+        <div class="mt-4">
+          <h4>Lista de alumnos</h4>
+
+          <ul class="list-group" id="listaNotas">
+            
+          </ul>
+          <h1 id="promedio"></h1>
+        </div>
+      </div>
+    </div>
+
+    <script src="Alumno.js"></script>
+    <script src="Script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
